@@ -1,16 +1,55 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta name="format-detection" content="telephone=no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
 
-        <link rel="stylesheet" href="/styles/styles.css">
-    </head>
-    <body>
-        <div>zzzzz</div>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <a href="/">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="logo">
+            </a>
+            <button type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="M 0 7.5 L 0 12.5 L 50 12.5 L 50 7.5 Z M 0 22.5 L 0 27.5 L 50 27.5 L 50 22.5 Z M 0 37.5 L 0 42.5 L 50 42.5 L 50 37.5 Z"></path></svg>
+            </button>
+        </div>
 
-        <script async src="/scripts/index.js"></script>
-    </body>
+    </header>
+    <main class="main">
+        <section class="main-container">
+            <div class="main__breadcrumbs">
+                <a href="/" class="main__breadcrumbs-item">Главная</a>
+                <a href="/" class="main__breadcrumbs-item">Ноутбуки</a>
+                <span class="main__breadcrumbs-item">Macbook</span>
+            </div>
+
+            <article class="product">
+                <div class="product-image">
+                    <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mbp13touch-space-select-202005_GEO_RU?wid=904&hei=840&fmt=jpeg&qlt=95&.v=1587951123260"
+                         alt="macbook"
+                         width="410"
+                         height="380"
+                    >
+                </div>
+                <div class="product-info">
+                    <h1 class="product-title">MacBook Pro</h1>
+                    <ul class="product-configuration__container"></ul>
+                </div>
+            </article>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            <span class="footer-copy">@blablabla, 2021</span>
+            <span class="footer-development">by Ilya Melnichenkov</span>
+        </div>
+    </footer>
+
+    <script async src="/scripts/index.js"></script>
+</body>
 </html>
