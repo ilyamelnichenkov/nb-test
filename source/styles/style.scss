@@ -12,9 +12,11 @@ html {
     -webkit-text-size-adjust: none;
     font-family: 'Arial', sans-serif;
     font-size: 16px;
+    min-height: 100vh;
     position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
 }
 
 a,
@@ -58,7 +60,7 @@ footer {
     border-top: 1px solid #000;
     align-self: flex-end;
     font-size: 12px;
-    color: #c4c4c4;
+    color: #d6d6d6;
 }
 
 .header-container,
@@ -119,7 +121,7 @@ footer {
     flex-wrap: wrap;
 }
 
-.product-image {
+.product-main {
     width: 100%;
 
     img {
@@ -142,6 +144,19 @@ footer {
     }
 }
 
+.product-result {
+    letter-spacing: 0.5;
+
+
+    @media all and (min-width: 960px) {
+        max-width: 80%;
+    }
+}
+
+.product-result__title {
+    font-weight: 700;
+}
+
 .product-title {
     font-size: 40px;
     margin-top: 0;
@@ -151,15 +166,64 @@ footer {
     }
 }
 
+.product-configuration__block {
+    position: relative;
+}
+
 .product-configuration__row {
     display: flex;
     flex-wrap: wrap;
+    height: 0;
+    visibility: hidden;
+
+    &.is-open {
+        height: auto;
+        visibility: visible;
+    }
 }
 
 .product-configuration__item {
-    flex-basis: 150px;
-    box-shadow: inset 0 0 0 1px #000;
-    font-size: 14px;
+    width: 100%;
+    //flex-basis: 215px;
+    border: 1px solid #d6d6d6;
+    margin: -1px -1px 0 0;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+
+    @media all and (min-width: 670px) {
+        width: 50%;
+    }
+
+    @media all and (min-width: 1280px) {
+        width: calc(100% / 3);
+    }
+}
+
+.product-configuration__row-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    will-change: transform;
+    transition: transform ease-out 0.15s;
+    outline: none;
+    transform-origin: center;
+
+    &.is-active {
+        transform: rotate(180deg);
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 20px;
+        border-left: 2px solid #d6d6d6;
+        border-bottom: 2px solid #d6d6d6;
+        transform: translateY(-22%) rotate(-45deg);
+    }
 }
 
 .product-configuration__label {
@@ -167,20 +231,25 @@ footer {
     width: 100px;
     height: 100%;
     min-width: 100%;
-    padding: 10px;
+    padding: 20px;
+}
+
+.product-configuration__text {
+    margin: 0;
 }
 
 .product-configuration__extend {
     display: none;
-    font-size: 12px;
+    font-size: 11px;
     opacity: 0.6;
+    margin-top: 5px;
 }
 
 input {
     display: none;
 
     &:checked + label {
-        background-color: #c4c4c4;
+        background-color: #d6d6d6;
 
         .product-configuration__extend {
             display: block;
